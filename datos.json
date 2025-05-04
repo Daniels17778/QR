@@ -1,0 +1,18 @@
+[
+    {
+      "nombre": "Hamburguesa Doble",
+      "precio": "$20.000",
+      "descripcion": "Carne, queso, tocineta y papas a la francesa."
+    },
+    {
+      "nombre": "Pizza Familiar",
+      "precio": "$35.000",
+      "descripcion": "8 porciones, ingredientes al gusto."
+    },
+    {
+      "nombre": "Limonada Natural",
+      "precio": "$6.000",
+      "descripcion": "Refrescante y natural, sin conservantes."
+    }
+  ]
+  

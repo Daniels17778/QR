@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR</title>
+    <style>
+        body { font-family: Arial; text-align: center; margin: 20px; }
+        .producto { border: 1px solid #ddd; margin: 10px; padding: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+
+    <h1>📋 Menú del Restaurante</h1>
+    <div id="menu"></div>
+
+    <h2>🔗 Escanea este QR para ver el menú:</h2>
+    <div id="qrcode"></div>
+
+    <!-- Librería para generar QR -->
+<!-- Librería para generar QR -->
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<script>
+    // 1) Leer datos JSON
+    fetch('datos.json')
+    .then(response => response.json())
+    .then(data => {
+        let menuDiv = document.getElementById('menu');
+        data.forEach(item => {
+            menuDiv.innerHTML += `
+                <div class="producto">
+                    <h3>${item.nombre}</h3>
+                    <p>${item.descripcion}</p>
+                    <strong>${item.precio}</strong>
+                </div>
+            `;
+        });
+    });
+
+
+    new QRCode(document.getElementById("qrcode"), {
+      text: "http://10.3.58.49:5500/index.html", // Dirección IP local
+      width: 150,
+      height: 150
+    });
+</script>
+</body>
+</html>
